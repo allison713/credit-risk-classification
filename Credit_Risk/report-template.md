@@ -2,20 +2,18 @@
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+The purpose of this analysis is to create a model, based on current loan customers, that can predict whether a new customer is a high risk or healthy borrower by analyzing the following borrower features: loan size, interest rate, income, debt to income ratio, number of open accounts, derogatory marks, and total debt.
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+The prior customer data used to train the model included 75036 healthy loan applications and 2500 high risk loan applications.
+
+When using a Logistic Regression model to predict the riskiness of a loan application, the model was 99% accurate, but has bias toward healthy loan applications because of the bias in the training data. 
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
-
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+* Logistic Regression Model:
+  * Precision: 99.7% of applications labeled as healthy by the model were known to be healthy. However, only 84.7% of the applications labeled as high risk are known to be high risk. This indicates that some healthy loan applications are classified as high risk.
+  * Recall: 1% of applications known to be healthy were mislabeled and 9% of applications known to be high risk were mislabeled.
+  * Accuracy: Overall the model was 99% accurate, but this may be skewed by the extremely high precision in the healthy predictions which are biased due to bias in the training data.
 
 
 
