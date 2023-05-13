@@ -15,15 +15,15 @@ When using a Logistic Regression model to predict the riskiness of a loan applic
   * Recall: 1% of applications known to be healthy were mislabeled and 9% of applications known to be high risk were mislabeled.
   * Accuracy: Overall the model was 99% accurate, but this may be skewed by the extremely high precision in the healthy predictions which are biased due to bias in the training data.
 
-
-
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+* Random Over Sampled Logistic Regression Model:
+  * Precision: 99.98% of applications labeled as healthy by the model were known to be healthy. However, only 84.1% of the applications labeled as high risk are known to be high risk. This was worse than before random sampling. I'm not sure why.
+  * Recall: 0.6% of applications known to be healthy were mislabeled and 0.6% of applications known to be high risk were mislabeled. This showed a marked improvement after resampling. 
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+It would be better for the company for the model selected to over predict healthy loans if we are going to then process the requests by hand. This ensures that healthy applicants are processed and unhealthy ones can then be removed. If our model over predicts unhealthy loans, we may reject loan applications before a human has a chance to review the information. 
 
-If you do not recommend any of the models, please justify your reasoning.
+However, if we are going to automatically accept loan applications based on classification as healthy, then we should over predict unhealthy loans so that a human can then filter through the applications and find the false negatives.
+
+
+* Overall I think that the resampled data model predicted better as fewer of the loans were individually misclassified.
